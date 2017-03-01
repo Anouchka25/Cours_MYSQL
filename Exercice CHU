@@ -6,15 +6,15 @@ Patients(IdPatient, Nom, Prenom, DateNaissance, AdressPostale,  NumSecu)
 Services(IdServices, NomServices) Ex: Pediatririe, Maternite, Radiologie…
 Consultations(IdConsul, fk_IdPatient, fk_IdServices, DateConsul, ButConsul)
 
-Ajouter un nouveau patient avec la commande INSERT INTO
-Modifier l’adresse postale d’un patient avec la commande UPDATE
-Calculer l'âge d’un patient
-Supprimer un service avec la commande DELETE
-Afficher la fiche médicale d’un patient comprenant ses informations personnelles ainsi que l’historique(date de consultation, service consulté, but de la consultation)
-Afficher les buts des consultations dans une période donnée
-Supprimer tous les patients qui ont plus de 150 ans 
-Afficher en une fois nom et prénom des patients avec la fonction CONCAT(). Exple : DUPONT Laurent
-Ajouter une colonne de tarifs des consultations avec la commande ALTER TABLE
+- Ajouter un nouveau patient avec la commande INSERT INTO
+- Modifier l’adresse postale d’un patient avec la commande UPDATE
+- Calculer l'âge d’un patient
+- Supprimer un service avec la commande DELETE
+- Afficher la fiche médicale d’un patient comprenant ses informations personnelles ainsi que l’historique(date de consultation, service consulté, but de la consultation)
+- Afficher les buts des consultations dans une période donnée(par exple sur une semaine donnée)
+- Supprimer tous les patients qui ont plus de 150 ans 
+- Afficher en une fois nom et prénom des patients avec la fonction CONCAT(). Exple : DUPONT Laurent
+- Ajouter une colonne de tarifs des consultations avec la commande ALTER TABLE
 
 
 Réponses:
@@ -38,4 +38,13 @@ INNER JOIN Patients
 ON fk_IdPatient= IdPatient
 INNER JOIN Services
 ON IdServices= fk_IdServices
+
+- Afficher les buts des consultations dans une période donnée(par exple sur une semaine donnée)
+SELECT ButConsul
+FROM Consultations
+WHERE DateConsul BETWEEN '2017-02-01' AND '2017-02-07'
+
+- Supprimer tous les patients qui ont plus de 150 ans 
+DELETE FROM Patients
+WHERE DateNaissance< '1967-03-01'
 
