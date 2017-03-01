@@ -27,6 +27,11 @@ UPDATE Patients
 SET AdressPostale='Rue de la république'
 WHERE Nom='Dupont' AND Prenom='Laurent'
 
+- Calculer l'âge d’un patient
+SELECT nom, naissance, CURRENT_DATE,
+     (YEAR(CURRENT_DATE)-YEAR(DateNaissance))
+    - (RIGHT(CURRENT_DATE,5)<RIGHT(naissance,5)) AS age
+
 - Supprimer un service avec la commande DELETE
 DELETE FROM Services
 WHERE NomServices='Pédiatrie'
