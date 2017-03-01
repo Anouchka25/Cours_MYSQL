@@ -1,0 +1,19 @@
+
+Enoncé:
+Nom de la base de données: bdchu
+Créer en ligne de commande uniquement la base de donnée du CHU Charles Nicole:
+Patients(IdPatient, Nom, Prenom, DateNaissance, AdressPostale,  NumSecu)
+Services(IdServices, NomServices) Ex: Pediatririe, Maternite, Radiologie…
+Consultations(IdConsul, fk_IdPatient, fk_IdServices, DateConsul, ButConsul)
+Ajouter un nouveau patient avec la commande INSERT INTO
+Modifier l’adresse postale d’un patient avec la commande UPDATE
+Calculer l'âge d’un patient
+Supprimer un service avec la commande DELETE
+
+Réponses:
+Ajouter un nouveau patient avec la commande INSERT INTO
+INSERT INTO Patients(Nom, Prenom, DateNaissance,AdressPostale,  NumSecu)
+VALUES(LECLERC, Laurent, 10-12-2000, rue de la république, 1258964574)
+
+
+
