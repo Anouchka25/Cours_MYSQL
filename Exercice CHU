@@ -48,3 +48,11 @@ WHERE DateConsul BETWEEN '2017-02-01' AND '2017-02-07'
 DELETE FROM Patients
 WHERE DateNaissance< '1967-03-01'
 
+- Afficher en une fois nom et prénom des patients avec la fonction CONCAT(). Exple : DUPONT Laurent
+SELECT CONCAT(Nom, ' ', Prenom) AS 'Nom complet'
+FROM Patients
+
+- Ajouter une colonne de tarifs des consultations avec la commande ALTER TABLE
+ALTER TABLE Consultations
+ADD TarifsConsuls DOUBLE
+
